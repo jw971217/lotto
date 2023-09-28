@@ -18,7 +18,7 @@ $(document).ready(function(){
                 rdn = Math.ceil(Math.random() * 45);
                 // console.log("다시랜덤:", rdn);
             } ///////// while /////////////
-            console.log("rdn", rdn)
+            // console.log("rdn", rdn)
             
             const lot = document.querySelectorAll(".lotto");
             
