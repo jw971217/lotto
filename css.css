@@ -1,0 +1,39 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+html, body { background-color: #FAF7F0; /* color: #FAF7F0; */
+ overflow: hidden; font-family: 'Libre Baskerville', serif; user-select: none; -webkit-user-drag: none; }
+.df { display: flex; flex-direction: column; position: relative; align-items: center; }
+.num, .btn { width: 100vw; height: 50vh; position: relative; }
+.num { display: flex; align-items: center; justify-content: space-evenly; flex-wrap: wrap; align-content: stretch; }
+.num li.brk { display: none; }
+.btn { text-align: center; line-height: 10vw; position: relative; }
+.btn a { position: absolute; display: block; border: 5px solid #BCCEF8; width: 15vw; height: 10vw; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 20px; font-size: 2.5vw; transition: .3s; }
+.btn a:before { content: ''; display: block; width: 100%; height: 100%; border-radius: 20px; position: absolute; left: 0; top: 0; animation: Quick 3s cubic-bezier(1, 2, 0.66, 1.3) infinite; z-index: -1; }
+@keyframes Quick { 
+ 0% { -webkit-transform: scale(0); transform: scale(0); opacity: 0.5; } 60% { opacity: 1.0; background: #98a8f800; } 95% { background: #98a8f8; } 100% { -webkit-transform: scale(1); transform: scale(.9); opacity: 0; } }
+
+.gl { width: 100vw; height: 10vh; line-height: 10vh; text-align: center; font-size: 8vh; text-shadow: 3px 3px 2px #9c9fa5; }
+.lotto { width: 13vw; height: 13vw; border-radius: 50%; text-align: center; line-height: 13vw; border: 5px solid #98A8F8; font-size: 7vw; text-shadow: 3px 3px 2px #9c9fa5; }
+.bu1, .bu3, .bu5 { border: 5px solid #98edf8; }
+.right { position: absolute; display: inline-block; bottom: 10px; right: 10px; text-shadow: 1px 1px 2px #707275; cursor: pointer; }
+.wrap { text-align: center; position: absolute; right: 28px; width: 70px; height: 30px; border: 2px solid #98A8F8; border-radius: 20px; line-height: 30px; animation: motion 0.4s linear 0s infinite alternate; }
+@keyframes motion { 
+ 0% { bottom: 40px; } 100% { bottom: 45px; } }
+
+.wrap::after { content: ''; display: block; position: absolute; border-top: 10px solid #98A8F8; border-left: 10px solid transparent; border-right: 10px solid transparent; left: 25px; bottom: -11px; }
+/********************************************** 
+ 미디어 쿼리
+**********************************************/
+@media screen and (max-width: 1025px){
+ .num li.brk { flex-basis: 100%; height: 0; border: none; display: block; }
+ .num li.brk~li { margin-top: 20px; }
+ .lotto { font-size: 7vw; }
+ .gl { height: 20vh; margin-top: 10vh; }
+ .num { height: 30vh; }
+ .btn { height: 50vh; line-height: none; } 
+ .btn a { width: 35vw; height: 20vw; line-height: 20vw; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 7vw; text-shadow: 1px 1px 1px #000; } }/*************************************/
+
+@media screen and (max-width: 500px){
+ .gl { margin: 5vh; }
+ .lotto { font-size: 10vw; width: 12vh; height: 12vh; line-height: 12vh; }
+ }/*************************************/
